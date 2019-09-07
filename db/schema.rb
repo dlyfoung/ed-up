@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 2019_09_05_202141) do
     t.string "name"
     t.string "author"
     t.string "ref"
-    t.string "type"
-    t.float "rating"
-    t.float "progress"
+    t.string "category"
+    t.decimal "rating"
+    t.decimal "progress"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

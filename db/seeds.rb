@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# TEST Dataset - to remove later on
+for i in 1..3 
+	Resource.create({name:"my book #{i}",author:"author #{i}",ref:"N/A",category:"paper book",rating:nil,progress:0})
+end
