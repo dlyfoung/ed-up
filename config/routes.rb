@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   get 'resources/list'
   get 'resources/add'
   get 'resources/update'
