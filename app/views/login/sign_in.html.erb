@@ -1,0 +1,38 @@
+<%= javascript_pack_tag 'hello_react' %>
+<table>
+  <tr>
+    <td id="edup-desc">
+      <h3>Ed-Up! is a plateform for sharing resource references, tracking progress and building curriculum.</h3>
+    </td>
+    <td>
+<div id="sign_in">
+  <h3>Sign In to Your Account</h3>
+  <%= link_to 'Or sign up', new_user_path %><br/>
+
+  <%= form_for :sign_in, url: login_sign_in_path, class: "center" do |form| %>
+    <%= form.label :login, class: "fieldname" %>
+    <%= form.text_field :login %>
+
+    <%= form.label :password, class: "fieldname"  %>
+    <%= form.password_field :password %>
+
+    <%= form.submit "Sign In" %>
+  <% end %>
+
+  <% if @errors[:full_messages].any? %>
+  <div id="error_explanation">
+    <h2>Failed to sign in:</h2>
+    <ul>
+      <% @errors[:full_messages].each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <%= link_to "I forgot my password", "" %>
+
+</div>
+  </td>
+  </tr>
+  </table>

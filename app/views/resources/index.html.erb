@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<%= link_to "Add a New Resource", new_resource_path %>
+<h1>List of Resources</h1>
+<%
+@resources.each do |resource|
+%>
+  <p>Resource:
+    <b><%= link_to resource.name.capitalize, edit_resource_path(resource) %></b>
+    <b><%#= resource.name.capitalize %></b>
+    <%= resource.author.capitalize %>
+    <%= resource.ref.capitalize %>
+    <%= resource.category.capitalize %>
+    <%= resource.rating %>
+    <%= resource.tag %>
+    <%= link_to 'Delete', resource, method: :delete, data: {confirm: 'Are you sure?'} %>
+  </p>
+<% end %>

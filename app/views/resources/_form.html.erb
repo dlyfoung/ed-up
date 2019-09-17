@@ -1,0 +1,47 @@
+<%= form_with(model: resource, local: true) do |form| %>
+<% if resource.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(resource.errors.count, "error") %> prohibited this resource from being saved:</h2>
+
+  <ul>
+    <% resource.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+<%= form.label :name %>
+<%= form.text_field :name, value: resource.name %>
+</div>
+
+<div class="field">
+<%= form.label :author %>
+<%= form.text_field :author, value: resource.author  %>
+</div>
+
+<div class="field">
+<%= form.label :reference %>
+<%= form.text_field :ref %>
+</div>
+
+<div class="field">
+<%= form.label :category %>
+<%= form.select(:category, ['Book', 'e-Book', 'Article', 'Podcast', 'Lecture'])%>
+</div>
+
+<div class="field">
+  <%= form.label :rating %>
+  <%= form.select(:rating, 1..5) %>
+</div>
+
+<div class="field">
+  <%= form.label :tag %>
+  <%= form.text_field :tag %>
+</div>
+
+<div class="actions">
+  <%= form.submit "Save" %>
+</div>
+<% end %>

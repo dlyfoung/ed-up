@@ -1,32 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ed-Up</title>
+    <title>Ed-Up!</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <style media="screen">
-      hr {
-          display: block;
-          height: 1px;
-          border: 0;
-          border-top: 1px solid #ccc;
-          margin: 1em 0;
-          padding: 0;
-      }
-    </style>
-
   </head>
 
   <body>
-    <h1>Ed-Up!</h1>
-    <hr />
+    <h1 class="header">Ed-Up!</h1>
     <%= yield %>
-
-    <hr/>
-    © 2019 Ed-Up - Cookies, Privacy and Terms
+    <p class="footer small">© 2019 Ed-Up - Cookies, Privacy and Terms</p>
   </body>
 </html>

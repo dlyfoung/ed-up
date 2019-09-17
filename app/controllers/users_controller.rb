@@ -1,4 +1,7 @@
+require 'bcrypt'
+
 class UsersController < ApplicationController
+  include BCrypt
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -26,6 +29,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
+    #hash password
+    @user.password = hash_password user_params[:password]
+
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
@@ -40,8 +46,11 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    #hash password
+    user_hash_params = user_params.merge( {:password => hash_password(user_params[:password])});
+
     respond_to do |format|
-      if @user.update(user_params)
+      if @user.update(user_hash_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -65,6 +74,12 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
+    end
+
+  private
+    # Hash user passwords
+    def hash_password password
+       Password.create(password)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

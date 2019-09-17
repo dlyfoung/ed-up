@@ -13,3 +13,59 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  color: #5b84d7;
+  font-family: "BentonSans", "Helvetica Neue", sans-serif;
+  font-size: small;
+}
+
+a {
+  color:inherit;
+  font-size: 10px
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.small {
+  font-size: 10px
+}
+
+#edup-desc {
+  background-color:#5b84d7;
+  color:white;
+  height: 100%;
+  width: 90%;
+  margin: 0;
+  vertical-align: middle;
+  padding: 50 50;
+  display: block;
+  border: 1px;
+}
+
+.center {
+  text-align: center;
+  margin: auto;
+}
+
+.fieldname {
+  color: #79a6d2
+}
+
+.header {
+  top: 0;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 0px 20px;
+}
