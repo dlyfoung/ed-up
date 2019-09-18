@@ -7,7 +7,7 @@
     <td>
 <div id="sign_in">
   <h3>Sign In to Your Account</h3>
-  <%= link_to 'Or sign up', new_user_path %><br/>
+  or <%= link_to 'create an account', new_user_path %><br/><br/>
 
   <%= form_for :sign_in, url: login_sign_in_path, class: "center" do |form| %>
     <%= form.label :login, class: "fieldname" %>

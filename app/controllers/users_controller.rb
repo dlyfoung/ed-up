@@ -2,7 +2,10 @@ require 'bcrypt'
 
 class UsersController < ApplicationController
   include BCrypt
+  # Avoid requiring login if user needs to create a new account
+  skip_before_action :require_login, only: :new
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+
 
   # GET /users
   # GET /users.json

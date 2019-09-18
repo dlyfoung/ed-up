@@ -5,9 +5,6 @@ Rails.application.routes.draw do
 
   get 'login/sign_in'
   post 'login/sign_in'
-  #get 'resources/new'
-  #get 'resources/update'
-  #get 'resources/delete'
-  #post 'resources/create'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'login/log_out'
+  
 end
